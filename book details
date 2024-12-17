@@ -1,0 +1,41 @@
+#include <iostream>
+#include <string>
+using namespace std;
+class Book 
+{
+private:
+string title;
+string author;
+int pages;
+public:
+Book(string t, string a, int p) 
+{
+title = t;
+author = a;
+pages = p;
+cout << "Book object created!" << endl;
+}
+void displayDetails() {
+cout << "Book Details:" << endl;
+cout << "Title: " << title << endl;
+cout << "Author: " << author << endl;
+cout << "Pages: " << pages << endl;
+}
+~Book() {
+cout << "Book object destroyed!" << endl;
+}
+};
+int main() 
+{
+string title, author;
+int pages;
+cout << "Enter book title: ";
+getline(cin, title);
+cout << "Enter author name: ";
+getline(cin, author);
+cout << "Enter number of pages: ";
+cin >> pages;
+Book myBook(title, author, pages);
+myBook.displayDetails();
+return 0;
+}
