@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string>
+using namespace std;
+class BankAccount {
+private:
+string accountHolder;
+int accountNumber;
+double balance;
+public:
+BankAccount(string holder, int accNumber, double initialBalance) {
+accountHolder = holder;
+accountNumber = accNumber;
+balance = initialBalance;
+cout << "Bank account for " << accountHolder << " (Account No: " << accountNumber << ") has been created with a balance of $" << balance << "." << endl;
+}
+void displayAccountDetails() {
+cout << "\nAccount Holder: " << accountHolder << endl;
+cout << "Account Number: " << accountNumber << endl;
+cout << "Account Balance: $" << balance << endl;
+}
+~BankAccount() {
+cout << "Bank account for " << accountHolder 
+<< " (Account No: " << accountNumber << ") is being closed." << endl;
+}
+};
+
+int main() {
+    BankAccount account1("manoj", 72888455, 100000);
+    account1.displayAccountDetails();
+    return 0;
+}
