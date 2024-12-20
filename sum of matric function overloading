@@ -1,0 +1,36 @@
+#include <iostream>
+void calculateSum(int arr1[], int arr2[], int result[], int size) {
+for (int i = 0; i < size; ++i) {
+result[i] = arr1[i] + arr2[i];
+}
+std::cout << "Sum of arrays: ";
+for (int i = 0; i < size; ++i) {
+std::cout << result[i] << " ";
+}
+std::cout << std::endl;
+}
+void calculateSum(int mat1[][3], int mat2[][3], int result[][3], int rows, int cols) {
+for (int i = 0; i < rows; ++i) {
+for (int j = 0; j < cols; ++j) {
+result[i][j] = mat1[i][j] + mat2[i][j];
+}
+}
+std::cout << "Sum of matrices:\n";
+for (int i = 0; i < rows; ++i) {
+ for (int j = 0; j < cols; ++j) {
+std::cout << result[i][j] << " ";
+}
+std::cout << std::endl;
+}
+}
+int main() {
+int arr1[] = {1, 2, 3};
+int arr2[] = {4, 5, 6};
+int arrResult[3];
+calculateSum(arr1, arr2, arrResult, 3);
+int mat1[2][3] = {{1, 2, 3}, {4, 5, 6}};
+int mat2[2][3] = {{7, 8, 9}, {10, 11, 12}};
+int matResult[2][3];
+calculateSum(mat1, mat2, matResult, 2, 3);
+return 0;
+}
