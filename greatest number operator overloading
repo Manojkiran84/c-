@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+class Compare {
+private:
+ int num;
+public:
+Compare(int n) : num(n) {}
+bool operator>(const Compare &c) const {
+return num > c.num;
+}
+bool operator<(const Compare &c) const {
+return num < c.num;
+}
+int getNum() const {
+return num;
+}
+};
+
+int main() 
+{
+int a, b;
+cout << "Enter two numbers: \n";
+cin >> a >> b;
+Compare c1(a), c2(b);
+if (c1 > c2) {
+cout << "The greatest number is: " << c1.getNum() << endl;
+} else if (c1 < c2) {
+cout << "The greatest number is: " << c2.getNum() << endl;
+} else {
+cout<<"Both numbers are equal." << endl;
+}
+return 0;
+}
