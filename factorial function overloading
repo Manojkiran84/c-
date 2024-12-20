@@ -1,0 +1,22 @@
+#include <iostream>
+unsigned long long factorial(int num) {
+unsigned long long result = 1;
+for (int i = 1; i <= num; ++i) {
+result *= i;
+}
+return result;
+}
+double factorial(double num) {
+double result = 1.0;
+for (int i = 1; i <= static_cast<int>(num); ++i) {
+result *= i;
+}
+return result;
+}
+int main() {
+int intNum = 5;
+double floatNum = 5.0;
+std::cout << "Factorial of " << intNum << " (integer): " << factorial(intNum) << std::endl;
+std::cout << "Factorial of " << floatNum << " (floating-point): " << factorial(floatNum) << std::endl;
+return 0;
+}
